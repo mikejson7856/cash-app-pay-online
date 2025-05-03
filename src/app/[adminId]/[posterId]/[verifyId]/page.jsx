@@ -4,6 +4,7 @@ import React from "react";
 function AcceptForm({params}) {
   const { adminId, posterId , verifyId} = params;
   console.log(adminId,posterId, verifyId)
+console.log('data');
 
   return (
     <div className="flex justify-center items-center min-h-screen">
