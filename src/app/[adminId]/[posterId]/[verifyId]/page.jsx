@@ -18,16 +18,16 @@ async function Verify({ params }) {
 
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data);
-  if (data?.success !== "exists") {
-    content = <div className="col-span-12">No Page found!!</div>;
-  }
-  if (data?.success == "exists") {
-    // content= <div className="col-span-12">Page found!!</div>
+  console.log("data", data);
+  // if (data?.success !== "exists") {
+  //   content = <div className="col-span-12">No Page found!!</div>;
+  // }
+  // if (data?.success == "exists") {
+  //   // content= <div className="col-span-12">Page found!!</div>
 
-    content = <AcceptForm sitename={data?.sitename} />;
-  }
-  return <div>{content}</div>;
+  //   content = <AcceptForm sitename={data?.sitename} />;
+  // }
+  return <div>data</div>;
 }
 
 export default Verify;
