@@ -7,19 +7,19 @@ function AcceptForm({ sitename }) {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
-    // const period = hours >= 12 ? "pm" : "am";
+    const period = hours >= 12 ? "pm" : "am";
     console.log(hours);
-    // let formattedHour;
-    // if (hours === 0) {
-    //   formattedHour = 12; // midnight
-    // } else if (hours > 12) {
-    //   formattedHour = hours - 12;
-    // } else {
-    //   formattedHour = hours;
-    // }
+    let formattedHour;
+    if (hours === 0) {
+      formattedHour = 12; // midnight
+    } else if (hours > 12) {
+      formattedHour = hours - 12;
+    } else {
+      formattedHour = hours;
+    }
     const formattedMinutes = minutes.toString().padStart(2, "0");
 
-    return `${hours}.${formattedMinutes}`;
+    return `${formattedHour}.${formattedMinutes} ${period}`;
   };
   return (
     <div className="flex justify-center items-center min-h-screen">
@@ -38,7 +38,7 @@ function AcceptForm({ sitename }) {
         <p className="font-medium text-4xl">$ {sitename.amount}</p>
         <div className="flex flex-col items-center">
           <p className="text-gray-500">For Apt </p>
-          <p className="text-gray-500">Today 
+          <p className="text-gray-500">Today {' '}
             {time()}
             </p>
         </div>
