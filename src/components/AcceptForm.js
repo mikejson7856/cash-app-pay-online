@@ -29,7 +29,7 @@ function AcceptForm({ sitename }) {
           alt="img"
           width={100}
           height={100}
-          className="rounded-full w-20 h-20 object-cover"
+          className="rounded-full w-40 h-40 object-cover"
         />
         
         <div className="flex flex-col items-center">
