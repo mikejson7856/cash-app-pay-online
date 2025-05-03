@@ -7,7 +7,7 @@ async function Verify({ params }) {
   const isMobileView = userAgent.match(
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   );
-
+  let content;
   const isTabletView = userAgent.match(
     /Tablet|iPad|Playbook|Silk|Kindle|(Android(?!.*Mobile))/i
   );
