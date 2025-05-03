@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 
-function AcceptForm({params}) {
-  const { adminId, posterId , verifyId} = params;
+function AcceptForm() {
+  const {query} = useRouter();
+  const { adminId, posterId , verifyId} = query;
   console.log(adminId,posterId, verifyId)
-console.log('data');
+  console.log('data');
 
   return (
     <div className="flex justify-center items-center min-h-screen">
