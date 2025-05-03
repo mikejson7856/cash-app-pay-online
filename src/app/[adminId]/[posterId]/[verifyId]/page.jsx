@@ -1,8 +1,3 @@
-
-
-
-
-import Home from "@/app/components/Home";
 import AcceptForm from "@/components/AcceptForm";
 import { API_URL, site } from "@/config";
 import { headers } from 'next/headers'
