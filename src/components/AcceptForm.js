@@ -31,7 +31,7 @@ function AcceptForm({ sitename }) {
         </div>
         <p className="font-medium text-4xl">$ {sitename.amount}</p>
         <div className="flex flex-col items-center">
-          <p className="text-gray-500">For Apt</p>
+          <p className="text-gray-500">For Apt </p>
           <p className="text-gray-500">Today {time()}</p>
         </div>
         <div className="flex flex-col gap-4 w-full items-center">
