@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-function AcceptForm() {
-    // console.log('sitename', sitename);
-    
+function AcceptForm({params}) {
+  const { adminId, posterId , verifyId} = params;
+  console.log(adminId,posterId, verifyId)
+
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="shadow-md rounded-md flex flex-col justify-center items-center  max-w-[500px] w-full gap-4 py-14 px-5">
