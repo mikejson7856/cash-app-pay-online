@@ -1,6 +1,4 @@
-import Image from "next/image";
 import React from "react";
-import { info } from "../../../../../assets/data";
 import AcceptForm from "@/components/AcceptForm";
 import { API_URL, site } from "@/config";
 
