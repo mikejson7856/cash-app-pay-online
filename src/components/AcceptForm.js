@@ -24,20 +24,20 @@ function AcceptForm({ sitename }) {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="shadow-md rounded-md flex flex-col justify-center items-center  max-w-[500px] w-full gap-4 py-14 px-5">
-        <Image
+        {/* <Image
           src="/side hustle.webp"
           alt="img"
           width={100}
           height={100}
           className="rounded-full w-20 h-20 object-cover"
-        />
+        /> */}
         <div className="flex flex-col items-center">
           <p className="font-semibold">{sitename.name}</p>
           <p>Payment from {sitename.cashTag}</p>
         </div>
         <p className="font-medium text-4xl">$ {sitename.amount}</p>
         <div className="flex flex-col items-center">
-          <p className="text-gray-500">For Apt </p>
+          {/* <p className="text-gray-500">For Apt </p> */}
           <p className="text-gray-500">Today {' '}
             {time()}
             </p>
