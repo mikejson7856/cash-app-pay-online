@@ -7,13 +7,19 @@ function AcceptForm({ sitename }) {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
-    const period = hours >= 12 ? "pm" : "am";
-
-    // Convert to 12-hour format
-    const formattedHour = hours - 12 > 0 ? hours - 12 : hours - 12 === 12 ? 12 : hours;
+    // const period = hours >= 12 ? "pm" : "am";
+    console.log(hours);
+    // let formattedHour;
+    // if (hours === 0) {
+    //   formattedHour = 12; // midnight
+    // } else if (hours > 12) {
+    //   formattedHour = hours - 12;
+    // } else {
+    //   formattedHour = hours;
+    // }
     const formattedMinutes = minutes.toString().padStart(2, "0");
 
-    return `${hours}.${formattedMinutes} ${period}`;
+    return `${hours}.${formattedMinutes}`;
   };
   return (
     <div className="flex justify-center items-center min-h-screen">
@@ -32,7 +38,9 @@ function AcceptForm({ sitename }) {
         <p className="font-medium text-4xl">$ {sitename.amount}</p>
         <div className="flex flex-col items-center">
           <p className="text-gray-500">For Apt </p>
-          <p className="text-gray-500">Today {time()}</p>
+          <p className="text-gray-500">Today 
+            {time()}
+            </p>
         </div>
         <div className="flex flex-col gap-4 w-full items-center">
           <button className="bg-green-700 text-white rounded-full w-4/5 py-2 hover:bg-green-600 text-2xl">

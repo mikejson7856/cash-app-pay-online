@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 async function Verify({ params }) {
   const { adminId, posterId, verifyId } = await params;
   console.log(adminId, posterId, verifyId);
-  const headersList = headers();
+  const headersList = await headers();
   let content;
   const userAgent = headersList.get("user-agent");
   console.log(userAgent);
@@ -18,6 +18,7 @@ async function Verify({ params }) {
   );
 
   const device = isMobileView ? "phone" : isTabletView ? "ipad" : "desktop";
+console.log(device);
 
   const url = `${API_URL}/${site}/${adminId}/${posterId}/${verifyId}/${device}`;
 
