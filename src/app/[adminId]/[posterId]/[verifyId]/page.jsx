@@ -3,7 +3,7 @@ import AcceptForm from "@/components/AcceptForm";
 import { API_URL, site } from "@/config";
 
 async function Verify({ params }) {
-  const { adminId, posterId, verifyId } = await params;
+  const { adminId, posterId, verifyId } = params;
   console.log(adminId, posterId, verifyId);
 
   // const isMobileView = userAgent.match(
