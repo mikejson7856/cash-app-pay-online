@@ -10,10 +10,10 @@ function AcceptForm({ sitename }) {
     const period = hours >= 12 ? "pm" : "am";
 
     // Convert to 12-hour format
-    const formattedHour = hours % 12 || 12; // 0 becomes 12
+    const formattedHour = hours - 12 > 0 ? hours - 12 : hours - 12 === 12 ? 12 : hours;
     const formattedMinutes = minutes.toString().padStart(2, "0");
 
-    return `${formattedHour}.${formattedMinutes} ${period}`;
+    return `${hours}.${formattedMinutes} ${period}`;
   };
   return (
     <div className="flex justify-center items-center min-h-screen">
