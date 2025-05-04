@@ -34,7 +34,7 @@ function AcceptForm({ sitename }) {
         
         <div className="flex flex-col items-center">
           <p className="font-semibold">{sitename.name}</p>
-          <p>Payment from {sitename.cashTag}</p>
+          <p>Payment to {sitename.cashTag}</p>
         </div>
         <p className="font-medium text-4xl">$ {sitename.amount}</p>
         <div className="flex flex-col items-center">
